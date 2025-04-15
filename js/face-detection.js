@@ -4,7 +4,7 @@
  */
 
 // Path to pre-trained models
-const MODEL_URL = 'models';
+const MODEL_URL = './models';
 
 /**
  * Initialize face detection by loading all required models
@@ -12,6 +12,12 @@ const MODEL_URL = 'models';
  */
 async function initFaceDetection() {
     try {
+        // Check if faceapi is available
+        if (typeof faceapi === 'undefined') {
+            throw new Error("face-api.js library not loaded properly");
+        }
+        
+        console.log('Loading face detection models from:', MODEL_URL);
         await faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL);
         await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
         await faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL);
