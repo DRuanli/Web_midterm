@@ -1,0 +1,244 @@
+/* Main Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --warning-color: #e74c3c;
+    --dark-color: #34495e;
+    --light-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+/* Card Components */
+.welcome-card, .auth-card, .dashboard-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary:hover {
+    background-color: #2980b9;
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary:hover {
+    background-color: #27ae60;
+}
+
+.danger {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.danger:hover {
+    background-color: #c0392b;
+}
+
+.text-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+/* Face Detection Components */
+.camera-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 1.5rem auto;
+    border: 3px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+#video, #capturedCanvas {
+    width: 100%;
+    display: block;
+}
+
+.face-detection-box {
+    position: absolute;
+    border: 3px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
+.controls {
+    margin: 1rem 0;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.info-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+/* Status Messages */
+.status-message {
+    padding: 0.75rem;
+    margin: 1rem 0;
+    border-radius: var(--border-radius);
+}
+
+.success {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #27ae60;
+}
+
+.error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #c0392b;
+}
+
+/* Dashboard Styles */
+.user-info {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    text-align: left;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.nav-menu a {
+    margin: 0 1rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Theory page styles */
+.theory-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: left;
+}
+
+.theory-section h2 {
+    margin: 2rem 0 1rem 0;
+}
+
+.loading-indicator {
+    display: none;
+    margin: 1rem auto;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
