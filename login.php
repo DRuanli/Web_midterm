@@ -14,6 +14,8 @@ if (isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Recognition Auth - Login</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Using CDN for face-api.js instead of local file -->
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -39,7 +41,6 @@ if (isset($_SESSION['user_id'])) {
         </div>
     </div>
     
-    <script src="js/face-api.min.js"></script>
     <script src="js/face-detection.js"></script>
     <script src="js/face-recognition.js"></script>
     <script>

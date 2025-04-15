@@ -3,8 +3,8 @@
  * Uses face-api.js (built on TensorFlow.js) to detect and recognize faces
  */
 
-// Path to pre-trained models
-const MODEL_URL = './models';
+// Use a reliable CDN for model files instead of local files
+const MODEL_URL = 'https://justadudewhohacks.github.io/face-api.js/models';
 
 /**
  * Initialize face detection by loading all required models
@@ -17,10 +17,13 @@ async function initFaceDetection() {
             throw new Error("face-api.js library not loaded properly");
         }
         
-        console.log('Loading face detection models from:', MODEL_URL);
+        console.log('Loading face detection models from CDN:', MODEL_URL);
+        
+        // Load models from CDN
         await faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL);
         await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
         await faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL);
+        
         console.log('Face detection models loaded successfully');
         return true;
     } catch (error) {
