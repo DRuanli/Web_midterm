@@ -55,7 +55,7 @@ function calculateDistance($descriptor1, $descriptor2) {
 // Find best match among users
 $bestMatch = null;
 $bestDistance = INF;
-$threshold = 0.6; // Maximum distance for a match
+$threshold = 0.6; 
 
 foreach ($users as $user) {
     $distance = calculateDistance($data['faceDescriptor'], $user['faceDescriptor']);

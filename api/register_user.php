@@ -1,10 +1,7 @@
 <?php
 // API endpoint for user registration
-
-// Set headers
 header('Content-Type: application/json');
 
-// Create data directory if it doesn't exist
 if (!file_exists('../data')) {
     mkdir('../data', 0755, true);
 }
@@ -78,7 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
     }
 } else {
-    // Method not allowed
     http_response_code(405);
     echo json_encode([
         'success' => false,
